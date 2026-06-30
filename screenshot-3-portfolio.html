@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { width: 440px; height: 952px; background: #0a0a0f; font-family: -apple-system, 'SF Pro Display', sans-serif; overflow: hidden; }
+  .phone { width: 440px; height: 952px; background: #0f0f18; position: relative; overflow: hidden; }
+
+  .caption-bar { background: linear-gradient(180deg, #7c3aed 0%, #5b21b6 100%); padding: 22px 24px 18px; text-align: center; }
+  .caption-main { font-size: 26px; font-weight: 800; color: #fff; letter-spacing: -0.5px; line-height: 1.15; }
+  .caption-sub { font-size: 15px; color: rgba(255,255,255,0.75); margin-top: 4px; }
+
+  .status { display:flex;justify-content:space-between;padding:14px 28px 0;font-size:15px;font-weight:600;color:#fff; }
+
+  .portfolio-header { padding: 16px 20px 4px; }
+  .ph-label { font-size: 13px; color: rgba(255,255,255,0.4); margin-bottom: 4px; }
+  .ph-value { font-size: 38px; font-weight: 800; color: #fff; letter-spacing: -1px; }
+  .ph-change { display: inline-flex; align-items: center; gap: 4px; font-size: 13px; font-weight: 600; color: #4ade80; background: rgba(74,222,128,0.1); padding: 3px 10px; border-radius: 20px; margin-top: 6px; }
+
+  .items-label { padding: 14px 20px 8px; font-size: 11px; font-weight: 600; color: rgba(255,255,255,0.35); text-transform: uppercase; letter-spacing: 0.08em; }
+
+  .item-row {
+    display: flex; align-items: center; gap: 12px;
+    padding: 11px 20px;
+    border-bottom: 0.5px solid rgba(255,255,255,0.05);
+  }
+  .item-thumb {
+    width: 46px; height: 46px; border-radius: 10px;
+    background: rgba(255,255,255,0.06);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; font-size: 22px;
+  }
+  .item-info { flex: 1; min-width: 0; }
+  .item-name { font-size: 14px; font-weight: 600; color: #fff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .item-sub { font-size: 12px; color: rgba(255,255,255,0.4); margin-top: 2px; }
+  .item-right { text-align: right; flex-shrink: 0; }
+  .item-price { font-size: 16px; font-weight: 700; color: #fff; }
+  .item-trend { font-size: 11px; margin-top: 2px; }
+  .up { color: #4ade80; }
+  .down { color: #f87171; }
+  .flat { color: rgba(255,255,255,0.35); }
+
+  .alert-box {
+    margin: 14px 20px 0;
+    background: rgba(251,191,36,0.08);
+    border: 0.5px solid rgba(251,191,36,0.25);
+    border-radius: 14px;
+    padding: 14px;
+    display: flex; gap: 12px; align-items: flex-start;
+  }
+  .alert-icon { font-size: 20px; flex-shrink: 0; }
+  .alert-text { font-size: 13px; font-weight: 600; color: #fbbf24; }
+  .alert-sub { font-size: 12px; color: rgba(251,191,36,0.6); margin-top: 3px; }
+
+  .tab-bar { position:absolute;bottom:0;left:0;right:0;background:rgba(15,15,24,0.95);border-top:0.5px solid rgba(255,255,255,0.08);display:flex;padding:12px 0 28px; }
+  .tab { flex:1;text-align:center; }
+  .tab-text { font-size:10px;font-weight:500;color:rgba(255,255,255,0.35); }
+</style>
+</head>
+<body>
+<div class="phone">
+  <div class="caption-bar">
+    <div class="caption-main">Track your finds.<br>Sell at the right moment.</div>
+    <div class="caption-sub">Portfolio alerts when your items spike in value</div>
+  </div>
+
+  <div class="status"><span>9:41</span><span>100%</span></div>
+
+  <div class="portfolio-header">
+    <div class="ph-label">Portfolio value</div>
+    <div class="ph-value">$1,247</div>
+    <div class="ph-change">↑ +$183 this month</div>
+  </div>
+
+  <div class="items-label">12 saved items</div>
+
+  <div class="item-row">
+    <div class="item-thumb">👟</div>
+    <div class="item-info">
+      <div class="item-name">Nike Air Force 1 Low White</div>
+      <div class="item-sub">eBay · Good condition</div>
+    </div>
+    <div class="item-right">
+      <div class="item-price">$72</div>
+      <div class="item-trend up">↑ +$14</div>
+    </div>
+  </div>
+
+  <div class="item-row">
+    <div class="item-thumb">📷</div>
+    <div class="item-info">
+      <div class="item-name">Fujifilm Instax Mini 11</div>
+      <div class="item-sub">Mercari · Good condition</div>
+    </div>
+    <div class="item-right">
+      <div class="item-price">$47</div>
+      <div class="item-trend up">↑ +$6</div>
+    </div>
+  </div>
+
+  <div class="item-row">
+    <div class="item-thumb">💎</div>
+    <div class="item-info">
+      <div class="item-name">Vintage Levi's 501 Jeans W32</div>
+      <div class="item-sub">Poshmark · Excellent</div>
+    </div>
+    <div class="item-right">
+      <div class="item-price">$89</div>
+      <div class="item-trend flat">→ Stable</div>
+    </div>
+  </div>
+
+  <div class="item-row">
+    <div class="item-thumb">🎮</div>
+    <div class="item-info">
+      <div class="item-name">Nintendo DS Lite Silver</div>
+      <div class="item-sub">eBay · Fair condition</div>
+    </div>
+    <div class="item-right">
+      <div class="item-price">$38</div>
+      <div class="item-trend down">↓ −$4</div>
+    </div>
+  </div>
+
+  <div class="item-row">
+    <div class="item-thumb">👜</div>
+    <div class="item-info">
+      <div class="item-name">Coach Leather Crossbody Bag</div>
+      <div class="item-sub">Poshmark · Good</div>
+    </div>
+    <div class="item-right">
+      <div class="item-price">$124</div>
+      <div class="item-trend up">↑ +$31</div>
+    </div>
+  </div>
+
+  <div class="alert-box">
+    <div class="alert-icon">🔔</div>
+    <div>
+      <div class="alert-text">Price spike: Coach Crossbody</div>
+      <div class="alert-sub">Up 33% this week — good time to sell</div>
+    </div>
+  </div>
+
+  <div class="tab-bar">
+    <div class="tab"><div class="tab-text">Scan</div></div>
+    <div class="tab"><div class="tab-text" style="color:#a78bfa;">Portfolio</div></div>
+    <div class="tab"><div class="tab-text">Account</div></div>
+  </div>
+</div>
+</body>
+</html>

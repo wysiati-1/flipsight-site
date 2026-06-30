@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 440px; height: 952px;
+    background: #0a0a0f;
+    font-family: -apple-system, 'SF Pro Display', sans-serif;
+    overflow: hidden;
+  }
+
+  .phone { width: 440px; height: 952px; background: #0f0f18; position: relative; overflow: hidden; }
+
+  .caption-bar {
+    background: linear-gradient(180deg, #185FA5 0%, #0c447c 100%);
+    padding: 22px 24px 18px; text-align: center;
+  }
+  .caption-main { font-size: 26px; font-weight: 800; color: #fff; letter-spacing: -0.5px; line-height: 1.15; }
+  .caption-sub { font-size: 15px; color: rgba(255,255,255,0.75); margin-top: 4px; }
+
+  .status { display:flex; justify-content:space-between; padding:14px 28px 0; font-size:15px; font-weight:600; color:#fff; }
+
+  .section-header { padding: 18px 20px 10px; }
+  .sh-title { font-size: 20px; font-weight: 700; color: #fff; }
+  .sh-sub { font-size: 13px; color: rgba(255,255,255,0.4); margin-top: 2px; }
+
+  .data-badge {
+    margin: 0 20px 16px;
+    background: rgba(74,222,128,0.1);
+    border: 0.5px solid rgba(74,222,128,0.3);
+    border-radius: 12px;
+    padding: 12px 14px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .badge-icon { width: 32px; height: 32px; background: rgba(74,222,128,0.15); border-radius: 8px; display:flex;align-items:center;justify-content:center;flex-shrink:0; }
+  .badge-text { font-size: 13px; color: #4ade80; font-weight: 600; }
+  .badge-sub { font-size: 11px; color: rgba(74,222,128,0.6); }
+
+  .sold-list { margin: 0 20px; }
+  .sold-row {
+    display: flex; align-items: center;
+    padding: 12px 0;
+    border-bottom: 0.5px solid rgba(255,255,255,0.06);
+  }
+  .sold-row:last-child { border-bottom: none; }
+  .sold-dot { width: 6px; height: 6px; background: #4ade80; border-radius: 50%; margin-right: 12px; flex-shrink: 0; }
+  .sold-title { font-size: 13px; color: rgba(255,255,255,0.7); flex: 1; line-height: 1.35; }
+  .sold-price { font-size: 15px; font-weight: 700; color: #fff; margin-left: 12px; flex-shrink: 0; }
+  .sold-cond { font-size: 11px; color: rgba(255,255,255,0.35); text-align: right; }
+
+  .vs-section {
+    margin: 16px 20px 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 10px;
+  }
+  .vs-card {
+    border-radius: 14px; padding: 14px;
+    border: 0.5px solid rgba(255,255,255,0.08);
+  }
+  .vs-card.ours { background: rgba(74,222,128,0.08); border-color: rgba(74,222,128,0.2); }
+  .vs-card.them { background: rgba(255,255,255,0.04); }
+  .vs-label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 8px; }
+  .vs-card.ours .vs-label { color: #4ade80; }
+  .vs-card.them .vs-label { color: rgba(255,255,255,0.35); }
+  .vs-name { font-size: 15px; font-weight: 700; color: #fff; margin-bottom: 6px; }
+  .vs-row2 { display: flex; gap: 6px; flex-wrap: wrap; }
+  .vs-pill { font-size: 10px; padding: 3px 8px; border-radius: 8px; font-weight: 500; }
+  .vs-pill.yes { background: rgba(74,222,128,0.15); color: #4ade80; }
+  .vs-pill.no { background: rgba(255,255,255,0.06); color: rgba(255,255,255,0.3); text-decoration: line-through; }
+
+  .tab-bar { position:absolute;bottom:0;left:0;right:0;background:rgba(15,15,24,0.95);border-top:0.5px solid rgba(255,255,255,0.08);display:flex;padding:12px 0 28px; }
+  .tab { flex:1;text-align:center; }
+  .tab-text { font-size:10px;font-weight:500;color:rgba(255,255,255,0.35); }
+</style>
+</head>
+<body>
+<div class="phone">
+  <div class="caption-bar">
+    <div class="caption-main">Real sold prices.<br>Not asking prices.</div>
+    <div class="caption-sub">Live eBay data — not AI estimates</div>
+  </div>
+
+  <div class="status"><span>9:41</span><span>100%</span></div>
+
+  <div class="section-header">
+    <div class="sh-title">Nike Air Force 1 Low White</div>
+    <div class="sh-sub">Size 10 · Good condition</div>
+  </div>
+
+  <div class="data-badge">
+    <div class="badge-icon">
+      <svg width="18" height="18" fill="none" viewBox="0 0 18 18"><path d="M9 2L11.2 6.5L16 7.3L12.5 10.7L13.4 15.5L9 13.2L4.6 15.5L5.5 10.7L2 7.3L6.8 6.5L9 2Z" stroke="#4ade80" stroke-width="1.5" stroke-linejoin="round"/></svg>
+    </div>
+    <div>
+      <div class="badge-text">Based on 23 real eBay sales</div>
+      <div class="badge-sub">Last 30 days · Updated hourly</div>
+    </div>
+  </div>
+
+  <div style="padding: 0 20px 8px; font-size:11px; font-weight:600; color:rgba(255,255,255,0.35); text-transform:uppercase; letter-spacing:0.08em;">Recent sold comps</div>
+
+  <div class="sold-list">
+    <div class="sold-row">
+      <div class="sold-dot"></div>
+      <div class="sold-title">Nike Air Force 1 '07 Low White/White Sz 10</div>
+      <div>
+        <div class="sold-price">$89</div>
+        <div class="sold-cond">Excellent</div>
+      </div>
+    </div>
+    <div class="sold-row">
+      <div class="sold-dot"></div>
+      <div class="sold-title">Nike AF1 Low Triple White Size 10 Men's</div>
+      <div>
+        <div class="sold-price">$72</div>
+        <div class="sold-cond">Good</div>
+      </div>
+    </div>
+    <div class="sold-row">
+      <div class="sold-dot"></div>
+      <div class="sold-title">Nike Air Force One Low White Sz 10 Used</div>
+      <div>
+        <div class="sold-price">$58</div>
+        <div class="sold-cond">Fair</div>
+      </div>
+    </div>
+    <div class="sold-row">
+      <div class="sold-dot"></div>
+      <div class="sold-title">Nike AF1 Low White GS Size 10 Box Included</div>
+      <div>
+        <div class="sold-price">$95</div>
+        <div class="sold-cond">New</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="vs-section">
+    <div class="vs-card ours">
+      <div class="vs-label">Flipsight</div>
+      <div class="vs-name">$58–$95</div>
+      <div class="vs-row2">
+        <span class="vs-pill yes">Real comps</span>
+        <span class="vs-pill yes">Live data</span>
+        <span class="vs-pill yes">Trend alerts</span>
+      </div>
+    </div>
+    <div class="vs-card them">
+      <div class="vs-label">Others</div>
+      <div class="vs-name">~$75 est.</div>
+      <div class="vs-row2">
+        <span class="vs-pill no">Real comps</span>
+        <span class="vs-pill no">Live data</span>
+        <span class="vs-pill no">Trend alerts</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="tab-bar">
+    <div class="tab"><div class="tab-text" style="color:#7eb3ff;">Scan</div></div>
+    <div class="tab"><div class="tab-text">Portfolio</div></div>
+    <div class="tab"><div class="tab-text">Account</div></div>
+  </div>
+</div>
+</body>
+</html>
